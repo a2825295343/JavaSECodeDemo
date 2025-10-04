@@ -1,6 +1,9 @@
 package com.pyw.a64threadmethod.threadmethod2;
 
 
+import static java.lang.Thread.MAX_PRIORITY;
+import static java.lang.Thread.MIN_PRIORITY;
+
 public class ThreadDemo1 {
     public static void main(String[] args) {
         /*
@@ -23,8 +26,8 @@ public class ThreadDemo1 {
         System.out.println(Thread.currentThread().getPriority());
 
         //设置线程的优先级
-        t1.setPriority(1);
-        t2.setPriority(10);
+        t1.setPriority(MIN_PRIORITY); //1
+        t2.setPriority(MAX_PRIORITY); //10
 
         //炸弹
         t1.start();

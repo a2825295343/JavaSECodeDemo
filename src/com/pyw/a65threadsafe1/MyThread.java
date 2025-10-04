@@ -2,6 +2,7 @@ package com.pyw.a65threadsafe1;
 
 public class MyThread extends Thread{
 
+    //表示这个类的所有对象都共享ticket这个数据，不会导致三个线程总共卖了300张票
     static int ticket = 0;
 
 
@@ -21,7 +22,7 @@ public class MyThread extends Thread{
                     }
                     //票没卖完
                     ticket++;
-                    System.out.println(getName()+"正在卖"+ticket+"张票");
+                    System.out.println(getName()+"正在卖第"+ticket+"张票");
                 }else {
                     break;
                 }
