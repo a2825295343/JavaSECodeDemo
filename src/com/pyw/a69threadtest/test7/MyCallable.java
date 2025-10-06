@@ -26,18 +26,18 @@ public class MyCallable implements Callable<Integer> {
         ArrayList<Integer> boxList = new ArrayList<>();
         while (true) {
             synchronized (MyThread.class) {
-                if (arrayList.size() == 0) {
+                if (arrayList.isEmpty()) {
                     int sum = boxList.stream().reduce(0, (a, b) -> a + b);
                     System.out.println("在此次抽奖过程中，" +
                             Thread.currentThread().getName() + "总共产生了" + boxList.size() + "个奖项。" +
-                            "分别为：" + boxList.toString() + "" +
-                            "最高奖项为" + Collections.max(boxList) + "元，" +
+                            "分别为：" + boxList +
+                            "。最高奖项为" + Collections.max(boxList) + "元，" +
                             "总计额为" + sum + "元");
                     break;
                 } else {
                     Collections.shuffle(arrayList);
                     Integer integer = arrayList.remove(0);
-                    System.out.println(integer);
+                    //System.out.println(integer);
                     boxList.add(integer);
                 }
             }
@@ -45,10 +45,14 @@ public class MyCallable implements Callable<Integer> {
 
         }
         //把集合中的最大值返回
-        System.out.println(boxList);
+        //System.out.println(boxList);
+        if (boxList.isEmpty()) {
+            //System.out.println("boxList is empty");
+            return 0; // 如果没有奖项，返回0
+        }
         int max = Collections.max(boxList);
-        System.out.println("max:"+max);
-        System.out.println("max == 0 ? 0 : max -->"+ (max == 0 ? 0 : max));
-        return max == 0 ? 0 : max;
+        //System.out.println("max:"+max);
+        //System.out.println("max == 0 ? 0 : max -->"+ (max));
+        return max;
     }
 }

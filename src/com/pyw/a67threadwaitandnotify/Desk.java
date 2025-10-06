@@ -10,7 +10,7 @@ public class Desk {
      *  0：没有面条
      *  1：有面条
      */
-    public static int fooFlag = 0;
+    public static int foodFlag = 0;
 
     /**
      * 总个数
@@ -21,5 +21,5 @@ public class Desk {
     /**
      * 锁对象
      */
-    public static Object lock = new Object();
+    public static final Object lock = new Object();
 }

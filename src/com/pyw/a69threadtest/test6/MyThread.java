@@ -26,22 +26,31 @@ public class MyThread extends Thread{
         //4.判断没到末尾
         while (true){
             synchronized (MyThread.class){
-                if(arrayList.size() == 0){
+                if(arrayList.isEmpty()){
                     //这个方法不好，有几个线程就要写几个判断
-                    int list1Sum = list1.stream().reduce(0,(a,b) -> a+b);
-                    int list2Sum = list2.stream().reduce(0,(a,b) -> a+b);
+                    int list1Sum = list1.stream().reduce(0, Integer::sum);
+                    int list2Sum = list2.stream().reduce(0, Integer::sum);
+
                     if("抽奖箱1".equals(getName())){
-                        System.out.println("在此次抽奖过程中，" +
-                                "抽奖箱1总共产生了"+list1.size()+"个奖项。" +
-                                "分别为："+list1.toString()+"" +
-                                "最高奖项为"+Collections.max(list1)+"元，" +
-                                "总计额为"+list1Sum+"元");
+                        if(list1.isEmpty()){
+                            System.out.println("抽奖箱1没有产生任何奖项");
+                        }else {
+                            System.out.println("抽奖箱1总共产生了"+list1.size()+"个奖项。" +
+                                    "分别为："+ list1 +
+                                    "。最高奖项为"+Collections.max(list1)+"元，" +
+                                    "总计额为"+list1Sum+"元");
+                        }
+
                     }else {
-                        System.out.println("在此次抽奖过程中，" +
-                                "抽奖箱2总共产生了"+list2.size()+"个奖项。" +
-                                "分别为："+list2.toString()+"" +
-                                "最高奖项为"+Collections.max(list2)+"元，" +
-                                "总计额为"+list2Sum+"元");
+                        if (list2.isEmpty()) {
+                            System.out.println("抽奖箱2没有产生任何奖项");
+                        } else {
+                            System.out.println(
+                                    "抽奖箱2总共产生了" + list2.size() + "个奖项。" +
+                                    "分别为：" + list2 +
+                                    "。最高奖项为" + Collections.max(list2) + "元，" +
+                                    "总计额为" + list2Sum + "元");
+                        }
                     }
                     break;
                 }else {

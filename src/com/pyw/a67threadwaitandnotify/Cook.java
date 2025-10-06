@@ -17,7 +17,7 @@ public class Cook extends Thread{
                     break;
                 }else {
                     //4.判断共享数据是否到了末尾（没有到末尾，执行核心逻辑）
-                    if(Desk.fooFlag == 1){
+                    if(Desk.foodFlag == 1){
                         //如果有就等待
                         try {
                             Desk.lock.wait();
@@ -26,8 +26,13 @@ public class Cook extends Thread{
                         }
                     }else {
                         //没有就做饭，然后修改食物状态
-                        Desk.fooFlag = 1;
-                        System.out.println("厨师做了一份饭放在桌子上，吃货还能吃"+Desk.count);
+                        Desk.foodFlag = 1;
+                        System.out.println("厨师做了一份饭放在桌子上，吃货还能吃"+Desk.count+"碗");
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
                         //叫醒等待的消费者开吃
                         Desk.lock.notifyAll();
                     }

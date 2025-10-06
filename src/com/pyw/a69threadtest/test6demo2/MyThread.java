@@ -23,18 +23,23 @@ public class MyThread extends Thread {
         ArrayList<Integer> boxList = new ArrayList<>();
         while (true) {
             synchronized (MyThread.class) {
-                if (arrayList.size() == 0) {
-                    int sum = boxList.stream().reduce(0, (a, b) -> a + b);
+                if (arrayList.isEmpty()) {
+                    int sum = boxList.stream().reduce(0, Integer::sum);
+                    if(boxList.isEmpty()) {
+                        System.out.println("在此次抽奖过程中，" +
+                                getName() + "没有产生任何奖项。");
+                        break;
+                    }
                     System.out.println("在此次抽奖过程中，" +
                             getName() + "总共产生了" + boxList.size() + "个奖项。" +
-                            "分别为：" + boxList.toString() + "" +
-                            "最高奖项为" + Collections.max(boxList) + "元，" +
+                            "分别为：" + boxList +
+                            "。最高奖项为" + Collections.max(boxList) + "元，" +
                             "总计额为" + sum + "元");
                     break;
                 } else {
                     Collections.shuffle(arrayList);
                     Integer integer = arrayList.remove(0);
-                    System.out.println(integer);
+                    //System.out.println(integer);
                     boxList.add(integer);
                 }
             }

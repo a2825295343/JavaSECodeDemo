@@ -12,10 +12,11 @@ public class MyInetAddressDemo1 {
         String getHostAddress()                     返回文本显示中的IP地址字符串
 */
 
-
+        InetAddress localHost = InetAddress.getLocalHost();
+        String hostName = localHost.getHostName();
       //1.获取InetAddress的对象
         //IP的对象 一台电脑的对象
-        InetAddress address = InetAddress.getByName("PYW");
+        InetAddress address = InetAddress.getByName(hostName);
         System.out.println(address);
 
         String name = address.getHostName();

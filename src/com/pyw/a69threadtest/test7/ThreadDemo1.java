@@ -53,6 +53,6 @@ public class ThreadDemo1 {
             max = t2Max;
         }
 
-        System.out.println("最大抽奖在"+maxName+"产生，的最大值为"+max);
+        System.out.println("最高奖金在"+maxName+"产生，为"+max+"元");
     }
 }

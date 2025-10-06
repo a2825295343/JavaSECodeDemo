@@ -17,7 +17,7 @@ public class ThreadDemo {
             运行状态（JAVA虚拟机没有这个状态）
             结束状态（TERMINATED） ——> 全部代码运行完毕
          */
-        ArrayBlockingQueue<String> abq = new ArrayBlockingQueue(1);
+        ArrayBlockingQueue<String> abq = new ArrayBlockingQueue<>(1);
 
         //创建线程的对象，把阻塞队列传递过去
         Cook c = new Cook(abq);
