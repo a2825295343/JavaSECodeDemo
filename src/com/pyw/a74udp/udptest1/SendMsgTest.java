@@ -16,7 +16,7 @@ public class SendMsgTest {
         Scanner sc = new Scanner(System.in);
         DatagramSocket ds = new DatagramSocket();
         while (true){
-            System.out.println("请输入数据");
+            //System.out.println("请输入数据");
             String str = sc.nextLine();
 
 

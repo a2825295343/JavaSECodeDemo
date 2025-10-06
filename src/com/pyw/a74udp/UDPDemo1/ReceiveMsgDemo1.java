@@ -30,7 +30,7 @@ public class ReceiveMsgDemo1 {
         InetAddress address = dp.getAddress();
         int port = dp.getPort();
 
-        System.out.println("接收到的数据" + new String(data,0,len));
+        System.out.println("接收到的数据：" + new String(data,0,len));
         System.out.println("该数据是从" + address + "这台电脑中"+port+"端口发出");
 
         //释放资源

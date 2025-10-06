@@ -20,9 +20,10 @@ public class ReceiveMsgTest {
             String str = new String(data,0,len);
             InetAddress address = dp.getAddress();
             int port = dp.getPort();
+            String name = address.getHostName();
 
-            System.out.println("接收到的数据" + str);
-            System.out.println("该数据是从" + address + "这台电脑中"+port+"端口发出");
+            //System.out.println("接收到的数据：" + str);
+            System.out.println(name + ": "+port+": "+str);
 
             if("886".equals(str)){
                 System.out.println("欢迎下次使用！！！");
