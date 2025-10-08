@@ -53,7 +53,7 @@ public class App {
      */
     private static ArrayList<User> getAllUserInfo() throws IOException, ClassNotFoundException {
         ArrayList<User> users = new ArrayList<>();
-        BufferedReader ois = new BufferedReader(new FileReader("D:\\Software\\java\\Project\\javaSE\\chat\\src\\top\\panyuwen\\server\\data\\user.txt"));
+        BufferedReader ois = new BufferedReader(new FileReader("F:\\Java\\JavaSECodeDemo\\src\\com\\pyw\\a76tcpchat\\server\\data\\user.txt"));
         String tempStr;
         while ((tempStr = ois.readLine()) != null) {
             String[] split = tempStr.split(":");

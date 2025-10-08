@@ -12,7 +12,7 @@ public class Client {
         //服务器：上传到服务器返回
 
         //获取本地文件
-        BufferedInputStream bisImg = FileUtil.getInputStream("D:\\Software\\java\\Project\\javaSE\\JavaSECodeDemo\\src\\com\\pyw\\a75tcp\\test3\\img\\ee5300e0743945b8b3b6b87aaba69478.jpg");
+        BufferedInputStream bisImg = FileUtil.getInputStream("F:\\Java\\JavaSECodeDemo\\src\\com\\pyw\\a75tcp\\test3\\img\\ee5300e0743945b8b3b6b87aaba69478.jpg");
 
 
         //1.创建Socket对象并连接服务端

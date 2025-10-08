@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 
 public class Server {
     public static void main(String[] args) throws IOException {
@@ -21,7 +22,7 @@ public class Server {
         //3.从连接通道中获取输入流读取数据
         InputStream is = socket.getInputStream();
         //字节流无法接收中文，把他装入转换流转为字符流
-        InputStreamReader isr = new InputStreamReader(is,"UTF-8");
+        InputStreamReader isr = new InputStreamReader(is, StandardCharsets.UTF_8);
         //提高运行效率使用Buffer
         BufferedReader br = new BufferedReader(isr);
         int b;

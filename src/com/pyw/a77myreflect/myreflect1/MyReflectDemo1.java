@@ -13,14 +13,14 @@ public class MyReflectDemo1 {
         //1.第一种方式
         //全类名：包名+类名
         //最为常用
-        Class clazz = Class.forName("com.pyw.a77myreflect.myreflect1.Student");
+        Class<?> clazz = Class.forName("com.pyw.a77myreflect.myreflect1.Student");
 
         //打印结果
         System.out.println(clazz);
 
         //2.第二种方式
         //一般更多是当作参数进行传递
-        Class clazz2 = Student.class;
+        Class<Student> clazz2 = Student.class;
         System.out.println(clazz2);
         
         //3.第三种方式

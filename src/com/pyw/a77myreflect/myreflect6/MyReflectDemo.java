@@ -28,6 +28,8 @@ public class MyReflectDemo {
         //利用反射创建对象并运行方法
         Class clazz = Class.forName(classname);
 
+        //clazz.newInstance();
+
         //获取构造方法
         Constructor con = clazz.getDeclaredConstructor();
         Object o = con.newInstance();

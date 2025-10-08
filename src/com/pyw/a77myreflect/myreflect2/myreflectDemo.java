@@ -53,6 +53,8 @@ public class myreflectDemo {
         //获取权限修饰符
         //public 返回1
         //private 返回2
+        //protected 返回4
+        //default 返回0
         int modifiers = con3.getModifiers();
         System.out.println(con3);
         System.out.println(modifiers);

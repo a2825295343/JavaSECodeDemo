@@ -29,7 +29,7 @@ public class Server {
         //但是，需要有一个结束标记，此处的循环才会停止
         //否则，程序就会一直停在read方法这里，等待读取下面的数据
         while ((b = isr.read()) != -1){
-            System.out.println((char)b);
+            System.out.print((char)b);
         }
 
         //4.回写数据

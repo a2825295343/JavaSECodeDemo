@@ -46,7 +46,7 @@ public class ProxyUtil {
                             System.out.println("收钱");
                         }
                         //去找大明星唱歌或跳舞
-                        //代码的表现形式就是唱歌或者跳舞
+                        //代码的表现形式就是调用大明星的唱歌或者跳舞方法
                         return method.invoke(bigStar,args);
                     }
                 }

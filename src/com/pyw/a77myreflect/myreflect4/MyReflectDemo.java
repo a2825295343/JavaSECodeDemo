@@ -51,7 +51,9 @@ public class MyReflectDemo {
         //参数一：方法的名字 参数二：方法的形参（可能又重载的情况）
         System.out.println("========获取单个方法=======");
         Method method = clazz.getDeclaredMethod("eat", String.class);
+        Method method2 = clazz.getDeclaredMethod("getName");
         System.out.println(method);
+        System.out.println(method2);
 
         //获取方法的修饰符
         System.out.println("========获取方法的修饰符=======");

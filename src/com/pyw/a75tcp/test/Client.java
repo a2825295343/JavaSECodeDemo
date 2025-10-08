@@ -14,7 +14,7 @@ public class Client {
         Socket socket = new Socket("127.0.0.1",10000);
 
         //2.读取本地文件中的数据，并写到服务器当中
-        BufferedInputStream bis = new BufferedInputStream(new FileInputStream("D:\\Software\\java\\Project\\javaSE\\JavaSECodeDemo\\src\\com\\pyw\\a75tcp\\test3\\img\\ee5300e0743945b8b3b6b87aaba69478.jpg"));
+        BufferedInputStream bis = new BufferedInputStream(new FileInputStream("C:\\Users\\ASUS\\Pictures\\Screenshots\\屏幕截图 2025-10-06 111352.png"));
         BufferedOutputStream bos = new BufferedOutputStream(socket.getOutputStream());
         byte[] bytes = new byte[1024];
         int len;

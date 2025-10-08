@@ -55,7 +55,7 @@ public class MyReflectDemo {
         Class<?> type = name.getType();
         System.out.println(type);
 
-        //获取尘缘变量记录的值
+        //获取成员变量记录的值
         Student student = new Student("zhangsan",23,"男");
         //name是私有的，需要临时取消权限规则
         name.setAccessible(true);

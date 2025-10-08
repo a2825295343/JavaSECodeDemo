@@ -19,7 +19,7 @@ public class Server {
 
         //3.读取数据并保存到本地文件中
         BufferedInputStream bis = new BufferedInputStream(socket.getInputStream());
-        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("D:\\Software\\java\\Project\\javaSE\\JavaSECodeDemo\\src\\com\\pyw\\a75tcp\\test3\\serverimg\\copy.jpg"));
+        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("C:\\Users\\ASUS\\Pictures\\Screenshots\\屏幕截图 2025-10-06 111352.png"));
         int len;
         byte[] bytes = new byte[1024];
         while ((len = bis.read(bytes)) != -1){

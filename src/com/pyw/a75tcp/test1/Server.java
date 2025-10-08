@@ -21,7 +21,7 @@ public class Server {
 
         int b;
         while ((b = br.read()) != -1){
-            System.out.print((char) b);
+            System.out.println((char) b);
         }
 
         socket.close();
